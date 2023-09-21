@@ -1,12 +1,7 @@
-$x-color: red;
-$o-color: blue;
-$tie-color: grey;
-
-body {
-	width: 100vw;
-	height: 100vh;
-	display: grid;
-	place-content: center;
+:root {
+	--x-color: red;
+	--o-color: blue;
+	--tie-color: grey;
 }
 
 * {
@@ -15,37 +10,33 @@ body {
 	box-sizing: border-box;
 }
 
-.player-info {
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	place-content: center;
+}
+
+.turn {
 	position: absolute;
-	width: 200px;
-	height: 300px;
 	top: 50px;
 	left: 50px;
 	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 70px;
 
-	* {
-		text-align: center;
-	}
 
-	hr {
-		margin: 10px 0;
-	}
-
-	.playing {
-		font-family: monospace;
-		font-size: 50px;
-	}
-
-	.x {
-		color: $x-color;
+	&.x {
+		color: var(--x-color);
 
 		&::after {
 			content: "X";
 		}
 	}
 
-	.o {
-		color: $o-color;
+	&.o {
+		color: var(--o-color);
 
 		&::after {
 			content: "O";
@@ -86,11 +77,11 @@ body {
 			}
 
 			&.x {
-				@include CellMark("X", $x-color)
+				@include CellMark("X", var(--x-color))
 			}
 
 			&.o {
-				@include CellMark("O", $o-color)
+				@include CellMark("O", var(--o-color))
 			}
 		}
 
@@ -126,15 +117,15 @@ body {
 		}
 
 		&.x {
-			@include SubGridMark("X", $x-color)
+			@include SubGridMark("X", var(--x-color))
 		}
 
 		&.o {
-			@include SubGridMark("O", $o-color)
+			@include SubGridMark("O", var(--o-color))
 		}
 
 		&.tie {
-			@include SubGridMark("---", $tie-color)
+			@include SubGridMark("---", var(--tie-color))
 		}
 	}
 }
