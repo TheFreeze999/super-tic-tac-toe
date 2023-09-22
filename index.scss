@@ -129,3 +129,29 @@ body {
 		}
 	}
 }
+
+@media (width < 1442px) {
+	.main-grid {
+		scale: 0.8;
+	}
+}
+
+@media (width < 1265px) {
+	.main-grid {
+		scale: 0.6;
+	}
+}
+
+@media (width < 953px) {
+	.turn {
+		top: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@media (width < 517px) {
+	.main-grid {
+		scale: 0.4;
+	}
+}
