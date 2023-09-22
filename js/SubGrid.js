@@ -38,6 +38,8 @@ class SubGrid {
                     return firstCellResult;
             }
         }
+        if (this.cells.every(cell => cell.result !== null))
+            return "tie";
         return null;
     }
 }

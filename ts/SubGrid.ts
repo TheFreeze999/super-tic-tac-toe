@@ -34,7 +34,7 @@ class SubGrid {
 		return this.cells.filter(cell => cell.posWithinSubgrid.x === columnNumber);
 	}
 
-	checkForWin() {
+	checkForWin(): SubGrid.Result {
 		const lines: Cell[][] = [];
 		for (let i = 0; i < 3; i++) {
 			lines.push(this.getCellsInRow(i), this.getCellsInColumn(i));
@@ -50,6 +50,8 @@ class SubGrid {
 				if (firstCellResult !== null) return firstCellResult;
 			}
 		}
+
+		if (this.cells.every(cell => cell.result !== null)) return "tie";
 
 		return null;
 	}

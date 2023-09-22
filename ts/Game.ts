@@ -8,6 +8,10 @@ namespace Game {
 class Game {
 	subGrids: SubGrid[] = [];
 	turn: Game.Turn = "X";
+	lastMovePositionWithinSubGrid = {
+		X: null as number | null,
+		O: null as number | null,
+	}
 
 	private createSubgrids() {
 		for (let i = 0; i < 9; i++) {

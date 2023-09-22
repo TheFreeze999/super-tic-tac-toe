@@ -3,6 +3,10 @@ import { Vector } from "./util.js";
 class Game {
     subGrids = [];
     turn = "X";
+    lastMovePositionWithinSubGrid = {
+        X: null,
+        O: null,
+    };
     createSubgrids() {
         for (let i = 0; i < 9; i++) {
             const x = i % 3;
