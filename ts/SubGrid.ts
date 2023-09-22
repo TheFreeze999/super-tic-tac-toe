@@ -26,6 +26,33 @@ class SubGrid {
 	clearCells() {
 		this.cells.forEach(cell => cell.result = null);
 	}
+
+	getCellsInRow(rowNumber: number) {
+		return this.cells.filter(cell => cell.posWithinSubgrid.y === rowNumber);
+	}
+	getCellsInColumn(columnNumber: number) {
+		return this.cells.filter(cell => cell.posWithinSubgrid.x === columnNumber);
+	}
+
+	checkForWin() {
+		const lines: Cell[][] = [];
+		for (let i = 0; i < 3; i++) {
+			lines.push(this.getCellsInRow(i), this.getCellsInColumn(i));
+		}
+
+		lines.push(
+			[this.cells[0], this.cells[4], this.cells[8]],
+			[this.cells[2], this.cells[4], this.cells[6]]);
+
+		for (const line of lines) {
+			const firstCellResult = line[0].result;
+			if (line.every(cell => cell.result === firstCellResult)) {
+				if (firstCellResult !== null) return firstCellResult;
+			}
+		}
+
+		return null;
+	}
 }
 
 export default SubGrid;
