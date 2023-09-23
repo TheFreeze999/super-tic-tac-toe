@@ -155,3 +155,15 @@ body {
 		scale: 0.4;
 	}
 }
+
+@media (height < 628px) {
+	.turn {
+		font-size: 40px;
+	}
+}
+
+@media (width < 262px) {
+	.turn {
+		font-size: 25px;
+	}
+}
