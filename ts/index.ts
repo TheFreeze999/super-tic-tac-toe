@@ -14,7 +14,7 @@ cellElsBySubGrid.forEach((cellElsInSubGrid, subGridNum) => {
 		const subGrid = game.subGrids[subGridNum];
 		const cell = game.cellAt(subGridNum, cellNum);
 		cellEl.addEventListener("click", () => {
-			if (cell.result !== null) return;
+			if (cell.result !== null || game.ended) return;
 			const turn = getTurn();
 			const opponent = invertTurn(turn);
 
@@ -37,8 +37,12 @@ cellElsBySubGrid.forEach((cellElsInSubGrid, subGridNum) => {
 
 				const gameWinCheck = game.checkForWin();
 				if (gameWinCheck !== null) {
+					game.ended = true;
 					alert(`${gameWinCheck.toUpperCase()} wins!`);
-					document.location.reload();
+					const resetGameEl = document.querySelector('.reset-game') as HTMLAnchorElement;
+					subGridEls.forEach(el => el.classList.add("inactive"));
+					resetGameEl.classList.remove("hidden")
+					return;
 				}
 			}
 

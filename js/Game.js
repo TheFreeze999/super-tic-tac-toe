@@ -7,6 +7,7 @@ class Game {
         X: null,
         O: null,
     };
+    ended = false;
     createSubgrids() {
         for (let i = 0; i < 9; i++) {
             const x = i % 3;

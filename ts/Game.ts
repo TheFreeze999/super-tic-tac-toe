@@ -11,7 +11,8 @@ class Game {
 	lastMovePositionWithinSubGrid = {
 		X: null as number | null,
 		O: null as number | null,
-	}
+	};
+	ended = false;
 
 	private createSubgrids() {
 		for (let i = 0; i < 9; i++) {

@@ -11,6 +11,9 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+*.hidden {
+  display: none;
+}
 
 body {
   width: 100vw;
@@ -178,6 +181,28 @@ body {
   font-size: 100px;
 }
 
+.reset-game {
+  font-size: 30px;
+  font-family: monospace;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 20px;
+  color: black;
+  border: 5px solid black;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+}
+.reset-game:hover {
+  background: rgb(255, 235, 179);
+}
+
 @media (width < 1442px) {
   .main-grid {
     scale: 0.8;
@@ -206,6 +231,16 @@ body {
 @media (height < 628px) {
   .turn {
     font-size: 40px;
+  }
+}
+@media (height < 400px) {
+  .turn {
+    font-size: 25px;
+  }
+}
+@media (height < 300px) {
+  .turn {
+    font-size: 15px;
   }
 }
 @media (width < 262px) {

@@ -8,6 +8,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	&.hidden {
+		display: none;
+	}
 }
 
 
@@ -130,6 +134,24 @@ body {
 	}
 }
 
+.reset-game {
+	font-size: 30px;
+	font-family: monospace;
+	text-decoration: none;
+	position: absolute;
+	top: 50%;
+	right: 100px;
+	transform: translateY(-50%);
+	padding: 20px;
+	color: black;
+	border: 5px solid black;
+	transition: background 0.1s ease-in-out;
+
+	&:hover {
+		background: rgb(255, 235, 179);
+	}
+}
+
 @media (width < 1442px) {
 	.main-grid {
 		scale: 0.8;
@@ -159,6 +181,18 @@ body {
 @media (height < 628px) {
 	.turn {
 		font-size: 40px;
+	}
+}
+
+@media (height < 400px) {
+	.turn {
+		font-size: 25px;
+	}
+}
+
+@media (height < 300px) {
+	.turn {
+		font-size: 15px;
 	}
 }
 
