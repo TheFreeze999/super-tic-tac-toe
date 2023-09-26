@@ -38,6 +38,7 @@ cellElsBySubGrid.forEach((cellElsInSubGrid, subGridNum) => {
 				const gameWinCheck = game.checkForWin();
 				if (gameWinCheck !== null) {
 					game.ended = true;
+					turnEl.innerHTML = "Winner: ";
 					alert(`${gameWinCheck.toUpperCase()} wins!`);
 					const resetGameEl = document.querySelector('.reset-game') as HTMLAnchorElement;
 					subGridEls.forEach(el => el.classList.add("inactive"));
