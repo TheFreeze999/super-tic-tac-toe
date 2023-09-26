@@ -222,10 +222,31 @@ body {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  .reset-game {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    -webkit-transform: translateX(50%) scale(0.8);
+       -moz-transform: translateX(50%) scale(0.8);
+        -ms-transform: translateX(50%) scale(0.8);
+            transform: translateX(50%) scale(0.8);
+  }
 }
 @media (width < 517px) {
   .main-grid {
     scale: 0.4;
+  }
+  .reset-game {
+    font-size: 20px;
+  }
+}
+@media (width < 343px) {
+  .reset-game {
+    -webkit-transform: translateX(50%) scale(0.6);
+       -moz-transform: translateX(50%) scale(0.6);
+        -ms-transform: translateX(50%) scale(0.6);
+            transform: translateX(50%) scale(0.6);
+    font-size: 15px;
   }
 }
 @media (height < 628px) {
